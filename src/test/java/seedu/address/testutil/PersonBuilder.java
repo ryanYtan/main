@@ -23,7 +23,7 @@ public class PersonBuilder {
     private Email email;
     private Address address;
     private Set<Tag> tags;
-    private Remark remarks;
+    private Remark remark;
 
     public PersonBuilder() {
         name = new Name(DEFAULT_NAME);
@@ -31,7 +31,7 @@ public class PersonBuilder {
         email = new Email(DEFAULT_EMAIL);
         address = new Address(DEFAULT_ADDRESS);
         tags = new HashSet<>();
-        remarks = new Remark(DEFAULT_REMARK);
+        remark = new Remark(DEFAULT_REMARK);
     }
 
     /**
@@ -43,7 +43,7 @@ public class PersonBuilder {
         email = personToCopy.getEmail();
         address = personToCopy.getAddress();
         tags = new HashSet<>(personToCopy.getTags());
-        remarks = personToCopy.getRemarks();
+        remark = personToCopy.getRemarks();
     }
 
     /**
@@ -89,13 +89,13 @@ public class PersonBuilder {
     /**
      * Sets the {@code Email} of the {@code Person} that we are building.
      */
-    public PersonBuilder withRemarks(String remarks) {
-        this.remarks = new Remark(remarks);
+    public PersonBuilder withRemarks(String remark) {
+        this.remark = new Remark(remark);
         return this;
     }
 
     public Person build() {
-        return new Person(name, phone, email, address, tags, remarks);
+        return new Person(name, phone, email, address, tags, remark);
     }
 
 }
