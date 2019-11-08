@@ -610,6 +610,19 @@ add-course c/CS1010
 add-course c/CS1010 c/CS2030 c/CS2040
 ----
 
+==== Adding a course with grades: `add-course` [v2.0]
+You can also add courses with grades. This is how `Jarvis` can tell you
+your current CAP. The grade can be any valid NUS grade.
+
+Format: `add-course c/COURSE-CODE g/GRADE`
+
+Example
+----
+add-course c/CS1010 g/A+
+add-course c/MA1521 g/B+
+add-course c/CS1231 g/B
+----
+
 ==== Deleting a course: `delete-course`
 You can easily delete a course from your list - either by the index of the course in the list,
 or by its course code.
@@ -644,6 +657,28 @@ Format: `check c/COURSECODE`
 ----
 check c/CS1010
 ----
+
+==== Showing Course Help: `help-course`
+Currently specific to students from the School of Computing. You can view all
+NUS Bachelor of Science (Computing) undergraduate requirements. This is data
+taken directly from the School of Computing website, arranged within `Jarvis`
+for your convenience
+
+Format: `help-course`
+
+==== Listing all courses: `list-course`
+List all your courses in the Course Planner. If you do this while on another
+page, `Jarvis` will automagically pull up the Course Planner
+
+Format: `list-course`
+
+==== Checking your CAP: [v2.0]
+If you want to check your CAP (Cumulative Average Point), `Jarvis` can tell
+you via the the `cap` command! This will depend on the grades input for
+any course you have added. If a course in your list has no grades, `Jarvis`
+will assume that you have not taken it.
+
+Format: `cap`
 
 ////
 Undo/Redo
